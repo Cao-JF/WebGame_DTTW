@@ -305,7 +305,7 @@ gdjs.copyArray(runtimeScene.getObjects("leaderboard"), gdjs.leaderboardCode.GDle
 }{for(var i = 0, len = gdjs.leaderboardCode.GDleaderboardObjects1.length ;i < len;++i) {
     gdjs.leaderboardCode.GDleaderboardObjects1[i].getBehavior("Tween").addObjectOpacityTween2("lbt__", 255, "easeOutQuad", 0.5, false);
 }
-}{gdjs.evtTools.network.sendAsyncRequest("http://127.0.0.1/leaderboard", "", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(0), gdjs.VariablesContainer.badVariable);
+}{gdjs.evtTools.network.sendAsyncRequest("/leaderboard", "", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(0), gdjs.VariablesContainer.badVariable);
 }
 { //Subevents
 gdjs.leaderboardCode.eventsList1(runtimeScene);} //End of subevents

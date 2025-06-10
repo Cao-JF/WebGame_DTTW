@@ -231,15 +231,30 @@ for(var i = 0, len = gdjs.leaderboardCode.GDn3_9595nameObjects2.length ;i < len;
 }
 
 
-};gdjs.leaderboardCode.asyncCallback11243876 = function (runtimeScene, asyncObjectsList) {
-asyncObjectsList.restoreLocalVariablesContainers(gdjs.leaderboardCode.localVariables);
+};gdjs.leaderboardCode.eventsList1 = function(runtimeScene, asyncObjectsList) {
+
+{
+
+
+let isConditionTrue_0 = false;
+{
 {gdjs.evtTools.network.jsonToVariableStructure(gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(0)), runtimeScene.getScene().getVariables().getFromIndex(1));
 }
 { //Subevents
 gdjs.leaderboardCode.eventsList0(runtimeScene, asyncObjectsList);} //End of subevents
+}
+
+}
+
+
+};gdjs.leaderboardCode.asyncCallback20048380 = function (runtimeScene, asyncObjectsList) {
+asyncObjectsList.restoreLocalVariablesContainers(gdjs.leaderboardCode.localVariables);
+
+{ //Subevents
+gdjs.leaderboardCode.eventsList1(runtimeScene, asyncObjectsList);} //End of subevents
 gdjs.leaderboardCode.localVariables.length = 0;
 }
-gdjs.leaderboardCode.eventsList1 = function(runtimeScene) {
+gdjs.leaderboardCode.eventsList2 = function(runtimeScene) {
 
 {
 
@@ -248,14 +263,14 @@ gdjs.leaderboardCode.eventsList1 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.leaderboardCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.2), (runtimeScene) => (gdjs.leaderboardCode.asyncCallback11243876(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("/leaderboard", "", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(0), gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.leaderboardCode.asyncCallback20048380(runtimeScene, asyncObjectsList)));
 }
 }
 
 }
 
 
-};gdjs.leaderboardCode.eventsList2 = function(runtimeScene) {
+};gdjs.leaderboardCode.eventsList3 = function(runtimeScene) {
 
 {
 
@@ -305,10 +320,9 @@ gdjs.copyArray(runtimeScene.getObjects("leaderboard"), gdjs.leaderboardCode.GDle
 }{for(var i = 0, len = gdjs.leaderboardCode.GDleaderboardObjects1.length ;i < len;++i) {
     gdjs.leaderboardCode.GDleaderboardObjects1[i].getBehavior("Tween").addObjectOpacityTween2("lbt__", 255, "easeOutQuad", 0.5, false);
 }
-}{gdjs.evtTools.network.sendAsyncRequest("/leaderboard", "", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(0), gdjs.VariablesContainer.badVariable);
 }
 { //Subevents
-gdjs.leaderboardCode.eventsList1(runtimeScene);} //End of subevents
+gdjs.leaderboardCode.eventsList2(runtimeScene);} //End of subevents
 }
 
 }
@@ -436,7 +450,7 @@ gdjs.leaderboardCode.GDNewSprite4Objects2.length = 0;
 gdjs.leaderboardCode.GDNewSprite4Objects3.length = 0;
 gdjs.leaderboardCode.GDNewSprite4Objects4.length = 0;
 
-gdjs.leaderboardCode.eventsList2(runtimeScene);
+gdjs.leaderboardCode.eventsList3(runtimeScene);
 gdjs.leaderboardCode.GDleaderboardObjects1.length = 0;
 gdjs.leaderboardCode.GDleaderboardObjects2.length = 0;
 gdjs.leaderboardCode.GDleaderboardObjects3.length = 0;
